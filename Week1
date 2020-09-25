@@ -1,0 +1,196 @@
+---------------------
+10
+import math
+a=int(input())
+b=int(input())
+print(a+b)
+print(a-b)
+print(a*b)
+print(int(a/b))
+print(a%b)
+print(math.log10(a))
+print(str(a)+str(b))
+---------------------
+11
+a=int(input())
+print(a*2.35)
+---------------------
+12
+import math
+t1=int(input())
+g1=int(input())
+t2=int(input())
+g2=int(input())
+distance = 6371.01*(math.acos(math.sin(t1)*math.sin(t2)+math.cos(t1)*math.cos(t2)*math.cos(g1-g2)))
+print(distance)
+---------------------
+13
+a=[100,50,25,10,5,2,1]
+ans=0
+sums=int(input())
+for i in range(0,len(a)):
+    ans+=int(sums/a[i])
+    sums%=a[i]
+print(ans)
+---------------------
+14
+x=float(input("feet "))
+print(str(30.48*x)+" sm")
+y=float(input("inches "))
+print(str(2.54*y)+" sm")
+---------------------
+15
+x=float(input())
+print("inches "+ str(12*x)) 
+print("yards "+ str(0.33333*x)) 
+print("miles "+ str(0.00018939*x)) 
+---------------------
+16
+r=float(input())
+print("area "+str(3.14*(r**2)))
+print("volume "+str((4/3)*3.14*(r**3)))
+---------------------
+17
+m=float(input())
+t=float(input())
+print(4163*m*t)
+---------------------
+18
+r=float(input())
+h=float(input())
+print("{0:.1f}".format(3.14*r*r*h))
+---------------------
+20
+p=float(input())
+v=float(input())
+t=float(input())
+print((p*v)/(8.31*t))
+---------------------
+21
+b=float(input())
+h=float(input())
+print((b*h)/2)
+---------------------
+22
+import math
+s1=float(input())
+s2=float(input())
+s3=float(input())
+s=(s1+s2+s3)/2
+print(math.sqrt(s*(s-s1)*(s-s2)*(s-s3)))
+---------------------
+23
+import math
+s=float(input())
+n=int(input())
+print(n*((s*s)/(4*math.tan(3.14/n))))
+---------------------
+24
+d=int(input("Days - "))
+h=int(input("Hours - "))
+m=int(input("Minutes - "))
+s=int(input("Seconds - "))
+print(d*86400+h*3600+m*60+s)
+---------------------
+25
+s=int(input())
+d=int(s/86400)
+s=s-d*86400
+h=int(s/3600)
+s=s-h*3600
+m=int(s/60)
+s=s-m*60
+h1=""
+m1=""
+s1=""
+if h<10:
+    h1="0"+str(h)
+else:
+    h1=str(h)
+
+if m<10:
+    m1="0"+str(m)
+else:
+    m1=str(m)
+
+if s<10:
+    s1="0"+str(s)
+else:
+    s1=str(s)
+print(str(d)+":"+h1+":"+m1+":"+s1)
+---------------------
+26
+import time
+print(time.asctime())
+---------------------
+27
+w=float(input())
+h=float(input())
+x=int(input("If you read the height in inches and the weight in pounds select 1,\nIf you read the height in meters and the weight in kilograms select 2\n"))
+if x==1:
+    print((w*703)/(h*h))
+else:
+    print(w/(h*h))
+---------------------
+28
+T=False
+V=False
+while not T:
+    t=float(input("temperature should be less or equal to 10   "))
+    if t<=10:
+        T=True
+
+while not V:
+    v=float(input("Speed should be exceeding 4.8 km   "))
+    if v>4.8:
+        V=True
+print("{0:.0f}".format(13.12+0.6215*t-11.37*(v**0.16)+0.3965*t*(v**0.16)))
+---------------------
+29
+c=float(input())
+print(str(c+273.15)+" Kelvin")
+print(str(c*18+32)+" Fahrenheit ")
+---------------------
+30
+p=float(input())
+print(str("{0:.2f}".format(p*0.14503773773022))+" psi")
+print(str("{0:.2f}".format(p*7.50063755419211))+" mm")
+---------------------
+31
+n=int(input())
+cnt=0
+while n>0:
+    cnt+=int(n%10)
+    n/=10
+print(cnt)
+---------------------
+32
+a=int(input())
+b=int(input())
+c=int(input())
+mmax=0
+mmin=0
+middle=0
+if a>=b and a>=c:
+    mmax=a
+elif b>=a and b>=c:
+    mmax=b
+else:
+    mmax=c
+
+if a<=b and a<=c:
+    mmin=a
+elif b<=a and b<=c:
+    mmin=b
+else:
+    mmin=c
+
+if (a>=b and a<=c) or (a<=b and a>=c):
+    middle=a
+elif (b>=a and b<=c) or (b<=a and b>=c):
+    middle=b
+else:
+    middle=c
+print(mmax)
+print(middle)
+print(mmin)

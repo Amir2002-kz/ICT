@@ -1,0 +1,349 @@
+                                                                    Exercise - 1
+def reverse_Lookup(d,x):
+    a={}
+    for i,j in d.items():
+        if j==x:
+            a[i]=j
+    for i,j in a.items():
+        print(i,j)
+    print("----------------------")
+d= {"a":100,"b":200,"c":300,"d":100,"e":200,"f":300,"g":100,"h":200,"j":300,"k":100,"p":400}
+reverse_Lookup(d,100)
+reverse_Lookup(d,400)
+reverse_Lookup(d,500)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 2
+import random
+def r():
+  a={}
+
+  b={}
+  i=2
+  j=0
+  while 1:
+    if(i>12):
+      break
+    if(i>7):
+      j-=1
+    else:
+      j+=1
+    a[i]=(float)(j/36)*100
+    i+=1
+  i=2
+  while 1:
+    if(i>12):
+      break
+    b[i]=0
+    i+=1
+  for i in range(1000):
+    d1 = random.randint(1,6)
+    d2 = random.randint(1,6)
+    b[d1+d2]+=1.00
+  print("|Total|","|Simulated Percent|","|Expected percent|")
+  for i in range(2,13):
+    print("  ",i,"\t","%.2f"%(b[i]/10.00),"\t\t\t%.2f"%a[i])
+r()
+                                                                         
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 3
+ chars={1:{1:".",2:",",3:"?",4:"!",5:":"},2:{1:"A",2:"B",3:"C"},
+        3:{1:"D",2:"E",3:"F"},4:{1:"G",2:"H",3:"I"},5:{1:"J",2:"K",3:"L"},
+        6:{1:"M",2:"N",3:"O"},7:{1:"P",2:"Q",3:"R",4:"S"},8:{1:"T",2:"U",3:"V"},
+        9:{1:"W",2:"X",3:"Y",4:"Z"},0:{1:" "}}
+s=input()
+h=0
+value=0
+for t in s:
+    h=0
+    value=0
+    t=t.upper()
+    for i,j in chars.items():
+        h+=1
+        for l in range(1,len(chars[h%10])+1):
+            if(j[l]==t):
+                value=l
+                break
+        while value>0:
+            print(i,end="")
+            value-=1
+
+                                                                    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 4
+m = {'A': '.-', 'J' : '.---', 'S': '...',  '1' : '.---',
+    'B': '-...' ,'K': '-.-', 'T' : '-', '2': '..--', 'C': '-.-.',
+    'L': '.-..', 'U': '..-', '3': '...-', 'D': '-..', 'M' :'--',
+    'V': '...-' ,'4': '....', 'E': '.', 'N': '-.', 'W': '.--', 
+    '5': '.....', 'F': '..-.', 'O':'---', 'X': '-..-', '6' : '-....',
+    'G': '--.', 'P': '.--.', 'Y': '-.--', '7': '--...', 'H': '....', 'Q': '--.-',
+    'Z': '--..', '8': '---..', 'I': '..', 'R':'.-.', '0': '-----', '9': '----.'}
+s = input()
+for t in s:
+    t=t.upper()
+    if(t in m):
+        print(m[t.upper()],end=' ')                                                                     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 5
+pc = {'A':'Newfoundland','B':'Nova Scotia', 'C':'Prince Edward Island', 'E':'New Brunswick','G':'Quebec',
+    'H':'Quebec','J':'Quebec','K':'Ontario','L':'Ontario','M':'Ontario','N':'Ontario','P':'Ontario',
+    'R':'Manitoba','S':'Saskatchewan','T':'Alberta','V':'British Columbia','X':'Nunavut or Northwest Territories', 'Y':'Yukon'}
+s = input()
+
+if(s[1] == '0'): print("Rural",end=' ')
+else: print("Urban",end=' ')
+print("address in ",end='')
+print(pc[s[0]])                                                                     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 6
+d1 = {'0':'','1':'one', '2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine'}
+d2 = {'0':'','2':'twenty','3':'thirty','4':'forty','5':'fivety','6':'sixty','7':'seventy','8':'eighty',
+'9':'ninety','10':'ten','11':'eleven','12':'twelve','13':'thirteen','14':'fourteen','15':'fifteen','16':'sixteen',
+'17':'seventeen','18':'eighteen','19':'nineteen'}
+n=input()
+if(len(n)==2):
+    if(n[0]=="1"):
+        print(d2[n])
+    else:
+        print(d2[n[0]],d1[n[0]])
+elif(len(n)==1):
+    print(d1[n])
+else:
+    print(d1[n[0]],"hundred",end=" ")
+    if(n[1]=="1"):
+        print(d2[n[1]+n[2]])
+    else:
+        print(d2[n[1]],d1[n[2]])                                                                     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 7
+s=input()
+a={}
+for i in s:
+    a[i]=0
+for i in s:
+    a[i]+=1
+print(len(a))                                                                    
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 8       
+s1=input()
+s2=input()
+a={}
+b={}
+for i in s1:
+    a[i]=0
+for i in s2:
+    b[i]=0
+cnt=0
+for i in s1:
+    a[i]+=1
+for i in s2:
+    b[i]+=1
+if(len(a)!=len(b)):
+    print("NO")
+else:
+    for i,j in a.items():
+        for l,r in b.items():
+            if i==l and j==r:
+                cnt+=1
+if(cnt==len(a)):
+    print("YES")
+else:
+    print("NO")
+                                                                    
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 9       
+s1=input()
+s2=input()
+a={}
+b={}
+for i in s1:
+    i=i.upper()
+    if i>="A" and i<="Z":
+        a[i]=0
+for i in s2:
+    i=i.upper()
+    if i>="A" and i<="Z":
+        b[i]=0
+cnt=0
+for i in s1:
+    i=i.upper()
+    if i>="A" and i<="Z":
+        a[i]+=1
+for i in s2:
+    i=i.upper()
+    if i>="A" and i<="Z":
+        b[i]+=1
+if(len(a)!=len(b)):
+    print("NO")
+else:
+    for i,j in a.items():
+        for l,r in b.items():
+            if i==l and j==r:
+                cnt+=1
+if(cnt==len(a)):
+    print("YES")
+else:
+    print("NO")
+                                                                                                                                       
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 10     
+ a={1:['A','E','I','L','N','O','R','S','T','U'],
+       2:['D','G'],
+       3:['B','C','M','P'],
+       4:['F','H','V','W','Y'],
+       5:['K'],
+       8:['J','X'],
+       10:['Q','Z']}
+s=input()
+cnt=0
+for t in s:
+    t=t.upper()
+    for i,j in a.items():
+        for k in j:
+            if k==t:
+                cnt+=i
+print(cnt)                                                                    
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 11   
+import random
+def pol(b,x,s):
+    i=x+15
+    a=[]
+    while x!=i:
+        a.append(x)
+        x+=1
+    b[s]=a
+def r(b):
+    for i,j in b.items():
+        print(i,end=" -> ")
+        for i in range(5):
+            v=random.randint(0,14)
+            print(j[v],end=" ")
+        print()
+        
+b={}
+pol(b,1,"B")
+pol(b,16,"I")
+pol(b,31,"N")
+pol(b,46,"G")
+pol(b,61,"O")
+r(b)                                                                     
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 12   
+import random
+import math
+def pol(b,x,s):
+    i=x+15
+    a=[]
+    while x!=i:
+        a.append(x)
+        x+=1
+    b[s]=a
+def r(b):
+    sum=0
+    d={}
+    for i,j in b.items():
+        print(i,end=" -> ")
+        n=5
+        l=[]
+        while n!=0:
+            v=random.randint(0,14)
+            print(j[v],end=" ")
+            sum+=j[v]
+            l.append(j[v])
+            j[v]=0
+            n-=1
+        print()
+        d[i]=l
+
+    value={1:[],2:[],3:[],4:[],5:[],999:[]}  
+    h=0      
+    for i,j in d.items():
+        for l in range(len(j)):
+            value[l+1].append(j[l])
+            if l==h:
+                value[999].append(j[l])
+        value[i]=d[i]
+        h+=1
+
+    for i,j in value.items():
+        summ=0
+        for l in j:
+            summ+=l
+        if(summ==0):
+            return True
+    return False
+b={}
+pol(b,1,"B")
+pol(b,16,"I")
+pol(b,31,"N")
+pol(b,46,"G")
+pol(b,61,"O")
+if r(b)==True:
+    print("You Win!!!")
+else:
+    print("You Lose!!!")                                                                     
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Exercise - 13      
+ import random
+def pol(b,x,s):
+    i=x+15
+    a=[]
+    while x!=i:
+        a.append(x)
+        x+=1
+    b[s]=a
+def r(b):
+    sum=0
+    d={}
+    for i,j in b.items():
+        n=5
+        l=[]
+        while n!=0:
+            v=random.randint(0,14)
+            sum+=j[v]
+            l.append(j[v])
+            j[v]=0
+            n-=1
+        d[i]=l
+
+    value={1:[],2:[],3:[],4:[],5:[],999:[]}  
+    h=0      
+    for i,j in d.items():
+        for l in range(len(j)):
+            value[l+1].append(j[l])
+            if l==h:
+                value[999].append(j[l])
+        value[i]=d[i]
+        h+=1
+
+    for i,j in value.items():
+        summ=0
+        for l in j:
+            summ+=l
+        if(summ==0):
+            return True
+    return False
+
+
+answer=[]
+for i in range(1000):
+    cnt=0
+    ok=True
+    while(ok):
+        b={}
+        pol(b,1,"B")
+        pol(b,16,"I")
+        pol(b,31,"N")
+        pol(b,46,"G")
+        pol(b,61,"O")
+        if r(b)==True:
+            ok=False
+        cnt+=1
+    answer.append(cnt)
+answer.sort()
+print(answer[0])
+print(answer[499])
+print(answer[999])                                                                    
+                                                                     
+                                                             
+                                                                     
